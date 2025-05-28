@@ -8,19 +8,19 @@ class MainTest {
 
 
     @Test
-    void middleCharacter_One() {
-        assertEquals("en", Main.middleCharacter("agenda"));
+    void countWords_One() {
+        assertEquals(11, Main.countWords("There was no telling what thoughts would come from the machine."));
 
     }
 
     @Test
-    void middleCharacter_Two() {
-        assertEquals("ar", Main.middleCharacter("gregarious"));
+    void countWords_Two() {
+        assertEquals(6, Main.countWords("Joyce enjoyed eating pancakes with ketchup."));
     }
 
     @Test
-    void middleCharacter_Three() {
-        assertEquals("g", Main.middleCharacter("age"));
+    void countWords_Three() {
+        assertEquals(13, Main.countWords("He watched the dancing piglets with panda bear tummies in the swimming pool."));
     }
 
 }
