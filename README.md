@@ -1,14 +1,15 @@
-# Squirrel Play
+# Middle Character
 
-The squirrels in Clarksville spend most of the day playing. In particular, they play if the temperature is between 60 and 90 (inclusive). Unless it is summer, then the upper limit is 100 instead of 90. 
+Write a Java method to display the middle character of a string. Your method name should be called middleCharacter and accept a string as a parameter and return a String of the middle character or characters.
 
-Create a Java method called squirrelPlay that accepts an integer temperature and a Boolean. If the Boolean parameter is false then it is winter, else if it is true then it is summer. Then based upon the logic above return  a Boolean back to the main method. Return true if the squirrels play and false otherwise.
-
-Test Data:
+If the length of the string is even there will be two middle characters.
+If the length of the string is odd there will be one middle character.
 ```
-squirrelPlay(70, false) → true
+Test Data:
 
-squirrelPlay(95, false) → false
+Input a string: 350
 
-squirrelPlay(95, true) → true
+Expected Output:
+
+The middle character in the string: 5
 ```
