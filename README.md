@@ -1,15 +1,12 @@
-# Middle Character
+# Count Words
 
-Write a Java method to display the middle character of a string. Your method name should be called middleCharacter and accept a string as a parameter and return a String of the middle character or characters.
-
-If the length of the string is even there will be two middle characters.
-If the length of the string is odd there will be one middle character.
+Write a Java method to count all words in a string. Your method name should be called countWords and accept a string as a parameter and return an integer representing the number of words.
 ```
 Test Data:
 
-Input a string: 350
+Input the string: The quick brown fox jumps over the lazy dog.
 
 Expected Output:
 
-The middle character in the string: 5
+Number of words in the string: 9
 ```
