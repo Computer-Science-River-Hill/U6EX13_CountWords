@@ -1,0 +1,60 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Test_moreThan_One
+      id: test_morethan_one
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Test_moreThan_One
+        setup-command: ''
+        command: gradle test --tests MainTest.moreThan_One
+        timeout: 10
+        max-score: 1
+    - name: Test_moreThan_Two
+      id: test_morethan_two
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Test_moreThan_Two
+        setup-command: ''
+        command: gradle test --tests MainTest.moreThan_Two
+        timeout: 10
+        max-score: 1
+    - name: Test_moreThan_Three
+      id: test_morethan_three
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Test_moreThan_Three
+        setup-command: ''
+        command: gradle test --tests MainTest.moreThan_Three
+        timeout: 10
+        max-score: 1
+    - name: Test_moreThan_Four
+      id: test_morethan_four
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Test_moreThan_Four
+        setup-command: ''
+        command: gradle test --tests MainTest.moreThan_Four
+        timeout: 10
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TEST_MORETHAN_ONE_RESULTS: "${{steps.test_morethan_one.outputs.result}}"
+        TEST_MORETHAN_TWO_RESULTS: "${{steps.test_morethan_two.outputs.result}}"
+        TEST_MORETHAN_THREE_RESULTS: "${{steps.test_morethan_three.outputs.result}}"
+        TEST_MORETHAN_FOUR_RESULTS: "${{steps.test_morethan_four.outputs.result}}"
+      with:
+        runners: test_morethan_one,test_morethan_two,test_morethan_three,test_morethan_four
