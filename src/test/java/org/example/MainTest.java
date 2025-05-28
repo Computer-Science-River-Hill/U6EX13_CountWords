@@ -8,19 +8,19 @@ class MainTest {
 
 
     @Test
-    void squirrelPlay_One() {
-        assertEquals(true, Main.squirrelPlay(70,false));
+    void middleCharacter_One() {
+        assertEquals("en", Main.middleCharacter("agenda"));
 
     }
 
     @Test
-    void squirrelPlay_Two() {
-        assertEquals(false, Main.squirrelPlay(95,false));
+    void middleCharacter_Two() {
+        assertEquals("ar", Main.middleCharacter("gregarious"));
     }
 
     @Test
-    void squirrelPlay_Three() {
-        assertEquals(true, Main.squirrelPlay(95,true));
+    void middleCharacter_Three() {
+        assertEquals("g", Main.middleCharacter("age"));
     }
 
 }
